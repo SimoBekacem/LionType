@@ -1,4 +1,5 @@
 import React from 'react';
+import './dist/style.css';
 
 function App() {
 	return (
