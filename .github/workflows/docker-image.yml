@@ -24,4 +24,4 @@ jobs:
                   context: .
                   file: ./Dockerfile
                   push: true
-                  tags: simohassane/liontype:$(date +%s)
+                  tags: ${{secrets.DOCKERHUB_USERNAME}}/liontype:${{github.run_id}}
