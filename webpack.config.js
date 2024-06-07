@@ -6,6 +6,7 @@ module.exports = {
 		path: path.join(__dirname, '/build'),
 		filename: 'bundle.js',
 	},
+
 	module: {
 		rules: [
 			{
@@ -22,8 +23,16 @@ module.exports = {
 					},
 				},
 			},
+			{
+				test: /\.(png|jpg|gif|json|xml|ico|svg)$/,
+				type: 'asset/resource',
+			},
 		],
 	},
+	resolve: {
+		extensions: ['.js', '.jsx'],
+	},
+
 	plugins: [
 		new HTMLWebpackPlugin({
 			template: './src/index.html',
