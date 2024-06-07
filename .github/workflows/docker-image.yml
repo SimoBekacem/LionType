@@ -24,4 +24,4 @@ jobs:
                   context: .
                   file: ./Dockerfile
                   push: true
-                  tags: simohassane/liontype:latest
+                  tags: simohassane/liontype:$(date +%s)
