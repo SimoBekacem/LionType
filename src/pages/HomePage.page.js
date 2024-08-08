@@ -4,10 +4,10 @@ import Header from '../components/Header.component';
 
 export default function HomePage() {
 	return (
-		<div>
+		<div className='homePage'>
 			<Header />
-			<main>body text</main>
-			<footer>footer</footer>
+			<main className='bodyText'>body text</main>
+			<footer className='footer'>footer</footer>
 		</div>
 	);
 }

@@ -13,9 +13,32 @@ $breakpoints-down: (
 	'large': f.em(1339.98),
 );
 
+$icon-breakpoints: (
+	'medium': f.em(425),
+	'large': f.em(720),
+);
+
+$grid-breakpoints: (
+	'small': f.em(720),
+	'meduim': f.em(848),
+	'large': f.em(1104),
+	'xlarge': f.em(1360),
+);
 //? function for mediaquerys :
 @mixin breakpoint($size) {
 	@media (min-width: map-get($breakpoints, $size)) {
+		@content;
+	}
+}
+
+@mixin icon-breakpoint($size) {
+	@media (min-width: map-get($icon-breakpoints, $size)) {
+		@content;
+	}
+}
+
+@mixin grid-breakpoint($size) {
+	@media (max-width: map-get($grid-breakpoints, $size)) {
 		@content;
 	}
 }

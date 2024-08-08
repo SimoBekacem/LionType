@@ -1,2 +1,115 @@
 @use '../utils/breakpoints' as b;
 @use '../utils/functions' as f;
+
+.homePage {
+	padding-top: f.rem(32);
+	display: grid;
+	row-gap: f.rem(30);
+	width: 100%;
+	@include b.grid-breakpoint(xlarge) {
+		grid-template-columns:
+			[full-width-start] minmax(0, 1rem)
+			[full-width-padding-start] minmax(0, 1fr)
+			[content-start] min(100% - 1rem * 2, f.rem(1024))
+			[content-end] minmax(0, 1fr) [full-width-padding-end] minmax(
+				0,
+				1rem
+			)
+			[full-width-end];
+	}
+	@include b.grid-breakpoint(large) {
+		grid-template-columns:
+			[full-width-start] minmax(0, 1rem)
+			[full-width-padding-start] minmax(0, 1fr)
+			[content-start] min(100% - 1rem * 2, f.rem(768))
+			[content-end] minmax(0, 1fr) [full-width-padding-end] minmax(
+				0,
+				1rem
+			)
+			[full-width-end];
+	}
+	@include b.grid-breakpoint(medium) {
+		grid-template-columns:
+			[full-width-start] minmax(0, 1rem)
+			[full-width-padding-start] minmax(0, 1fr)
+			[content-start] min(100% - 1rem * 2, f.rem(678))
+			[content-end] minmax(0, 1fr) [full-width-padding-end] minmax(
+				0,
+				1rem
+			)
+			[full-width-end];
+	}
+	@include b.grid-breakpoint(small) {
+		grid-template-columns:
+			[full-width-start] minmax(0, 1rem)
+			[full-width-padding-start] minmax(0, 1fr)
+			[content-start] min(100% - 1rem * 2, 100%)
+			[content-end] minmax(0, 1fr) [full-width-padding-end] minmax(
+				0,
+				1rem
+			)
+			[full-width-end];
+	}
+}
+
+.header,
+.bodyText,
+.footer {
+	grid-column: content;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	&__part1__faIcons,
+	&__part2 {
+		display: flex;
+		gap: f.rem(8);
+	}
+	&__part1 {
+		display: flex;
+		align-items: center;
+		gap: f.rem(8);
+		&__link {
+			display: flex;
+			align-items: center;
+			gap: f.rem(8);
+			&__logo {
+				width: f.rem(40);
+				height: f.rem(24);
+				padding: 4;
+			}
+			&__name {
+				margin-bottom: 0;
+				color: var(--gray-color);
+				font-size: 1.5rem;
+				font-family: var(--font__Lexend-Deca);
+				font-weight: unset;
+				padding: 4;
+				display: none;
+				@include b.icon-breakpoint(large) {
+					display: block;
+				}
+			}
+		}
+	}
+}
+.header__part1__faIcons__icon,
+.header__part2__faIcons__icon {
+	font-size: f.rem(16);
+	padding: f.rem(6.4);
+	color: var(--gray-color);
+	cursor: pointer;
+	@include b.icon-breakpoint(medium) {
+		font-size: f.rem(18);
+		padding: f.rem(7.2);
+	}
+	@include b.icon-breakpoint(large) {
+		font-size: f.rem(20);
+		padding: f.rem(8);
+	}
+}
+
+.mobile-config-button {
+}
